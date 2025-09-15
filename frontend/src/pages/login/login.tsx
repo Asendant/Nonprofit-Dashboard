@@ -25,7 +25,7 @@ const Login = () => {
         {/* Indie/nonprofit header */}
         <div className="mb-6 flex items-center gap-3">
           <div className="h-9 w-9 rounded-md bg-emerald-600/90 text-white grid place-items-center text-sm font-semibold shadow-sm">
-            NP
+            NPD
           </div>
           <div>
             <h1 className="text-lg font-semibold tracking-tight">Welcome back</h1>
@@ -70,26 +70,36 @@ const Login = () => {
           </div>
 
           <button
-            type="submit"
-            className="
-              w-full h-10 rounded-md
-              bg-emerald-600 text-white
-              shadow-sm
-              hover:bg-emerald-700
-              focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-neutral-900
-              transition
-            "
-          >
-            Sign in
-          </button>
+                type="submit"
+                className="
+                    w-full h-10 rounded-md
+                    bg-emerald-600 text-white
+                    shadow-sm
+                    hover:bg-emerald-700
+                    focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-neutral-900
+                    transition
+                "
+                >
+                Sign in
+            </button>
 
-          <p className="text-[11px] leading-5 text-neutral-500 dark:text-neutral-400 text-center">
+            <p className="text-xs text-center mt-3 text-neutral-600 dark:text-neutral-400">
+            Don’t have an account?{" "}
+            <a
+                href="/signup"
+                className="text-emerald-700 dark:text-emerald-400 font-medium hover:underline underline-offset-4"
+            >
+                Sign up
+            </a>
+            </p>
+
+            <p className="text-[11px] leading-5 text-neutral-500 dark:text-neutral-400 text-center mt-4">
             We never sell data. Read our{" "}
             <a href="#" className="underline underline-offset-2">
-              privacy policy
+                privacy policy
             </a>
             .
-          </p>
+            </p>
         </form>
       </div>
     </div>
