@@ -1,11 +1,24 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { Link, useNavigate } from "react-router-dom";
+
+import Cookies from 'js-cookie';
 
 import AuthInputField from "../../components/authinputfield/authinputfield";
 
 const Signup = () => {
+    const navigate = useNavigate();
+
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+
+    useEffect(() => {
+        const authToken = Cookies.get('authToken')
+
+        if (authToken != undefined) {
+            navigate('/', { replace: true });
+        }
+    }, [])
 
     return (
         <div className="min-h-screen w-full bg-neutral-50 dark:bg-neutral-950 text-neutral-800 dark:text-neutral-100 flex items-center justify-center px-4">
@@ -80,19 +93,19 @@ const Signup = () => {
 
                     <p className="text-xs text-center mt-2 text-neutral-600 dark:text-neutral-400">
                     Already have an account?{" "}
-                    <a
-                        href="/login"
+                    <Link
+                        to="/login"
                         className="text-emerald-700 dark:text-emerald-400 font-medium hover:underline underline-offset-4"
                     >
                         Log in
-                    </a>
+                    </Link>
                     </p>
 
                     <p className="text-[11px] leading-5 text-neutral-500 dark:text-neutral-400 text-center mt-4">
                     We never sell data. Read our{" "}
-                    <a href="#" className="underline underline-offset-2">
+                    <Link to="#" className="underline underline-offset-2">
                         privacy policy
-                    </a>
+                    </Link>
                     .
                     </p>
                 </form>
